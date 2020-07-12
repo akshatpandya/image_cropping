@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: image_cropping
-Description: Description of image_cropping
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: cv_bridge image_transport roscpp rospy sensor_msgs std_msgs std_msgs
