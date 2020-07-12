@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+    <group ns='instance1'>
+        <node name="server_node" pkg="image_cropping" type="server_node" output="screen" args="$(find image_cropping)/resource/test_image_1.jpg">
+            <rosparam command="load" file="$(find image_cropping)/description/crop_param.yaml"/>
+        </node>
+        <node name="client_node" pkg="image_cropping" type="client_node" output="screen" args="200 200"/>
+    </group>
+</launch>
