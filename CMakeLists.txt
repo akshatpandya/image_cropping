@@ -10,25 +10,27 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
-  std_msgs
-  message_generation
+  actionlib
+  genmsg
+  actionlib_msgs
 )
 
-add_service_files(
-   FILES
-   image_crop_srv.srv
+add_action_files(DIRECTORY action 
+  FILES 
+  image_crop.action
 )
 
 generate_messages(
   DEPENDENCIES
   sensor_msgs   
   std_msgs
+  actionlib_msgs
 )
 
 catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES image_cropping
-  CATKIN_DEPENDS cv_bridge image_transport roscpp rospy sensor_msgs std_msgs std_msgs
+  CATKIN_DEPENDS cv_bridge image_transport roscpp rospy sensor_msgs std_msgs actionlib_msgs
 #  DEPENDS system_lib
 )
 
